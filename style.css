@@ -99,3 +99,36 @@ section[data-sec=camera]{grid-column:span 2}
 body.full #console{display:none}
 body.full main{height:100dvh;display:block}
 body.full #stage{position:relative;width:100%;height:100dvh;border:0}
+.corner{flex-wrap:wrap;justify-content:flex-end;max-width:calc(100% - 150px)}
+.key[hidden]{display:none}
+#data{position:absolute;left:max(16px,env(safe-area-inset-left));top:68px;width:min(390px,calc(100% - 32px));max-height:calc(100% - 116px);display:flex;flex-direction:column;background:rgba(4,16,10,.3);border:1px solid rgba(124,255,158,.45);border-radius:4px;color:#7CFF9E;font:500 13px/1.45 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:0;text-transform:none;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);text-shadow:0 0 3px rgba(0,0,0,.9),0 1px 1px rgba(0,0,0,.8)}
+#data[hidden]{display:none}
+.dtabs{display:flex;flex:none;border-bottom:1px solid rgba(124,255,158,.45)}
+.dtabs button{flex:1;min-height:44px;padding:0 4px;background:none;border:0;border-right:1px solid rgba(124,255,158,.25);color:#7CFF9E;font:inherit;text-transform:uppercase;letter-spacing:.06em;cursor:pointer}
+.dtabs button:last-child{border-right:0}
+.dtabs button[aria-pressed=true]{background:rgba(124,255,158,.18)}
+.dtabs button:focus-visible{outline:2px solid #7CFF9E;outline-offset:-3px}
+.dbody{overflow:auto;padding:10px 12px 12px;-webkit-overflow-scrolling:touch}
+.dbody section{display:none}
+#data[data-tab=specs] [data-d=specs],#data[data-tab=power] [data-d=power],#data[data-tab=history] [data-d=history],#data[data-tab=notes] [data-d=notes]{display:block}
+.dbody h3{margin:0 0 6px;font:inherit;text-transform:uppercase;letter-spacing:.1em;border-bottom:1px dashed rgba(124,255,158,.4);padding-bottom:4px}
+.dbody h3:not(:first-child){margin-top:12px}
+.dbody p{margin:6px 0}
+.dbody dl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:6px 0}
+.dbody dt{color:#5FE090;text-transform:uppercase}
+.dbody dd{margin:0;text-align:right}
+.dbody ol{list-style:none;padding:0;margin:0}
+.dbody li{display:grid;grid-template-columns:96px 1fr;gap:10px;padding:4px 0}
+.dbody li b{font-weight:500;color:#5FE090}
+.src{color:#5FE090;font-size:12px}
+@media (max-width:699px),(max-height:520px) and (orientation:landscape){
+.corner{gap:6px}
+.corner{max-width:calc(100% - 112px)}
+.corner .key{min-height:40px;font-size:13px;padding:0 5px;letter-spacing:.03em}
+#data{top:60px;max-height:calc(100% - 100px);font-size:12px}
+}
+.dbody{scrollbar-width:thin;scrollbar-color:rgba(124,255,158,.55) transparent}
+.dbody::-webkit-scrollbar{width:6px}
+.dbody::-webkit-scrollbar-track{background:transparent}
+.dbody::-webkit-scrollbar-thumb{background:rgba(124,255,158,.55);border-radius:0}
+.dbody::-webkit-scrollbar-thumb:hover{background:#7CFF9E}
