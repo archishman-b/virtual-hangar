@@ -169,3 +169,12 @@ body:not(.full) #xExit{display:none}
 
 .xlv{display:flex;gap:2px}
 #xTools .xlv .key{padding:0 12px}
+
+input.fader{-webkit-appearance:none;appearance:none;height:24px;background:
+ linear-gradient(#D5D8CB,#D5D8CB) 6px 2px/1px 5px no-repeat,linear-gradient(#D5D8CB,#D5D8CB) calc(6px + (100% - 12px)/3) 2px/1px 5px no-repeat,linear-gradient(#D5D8CB,#D5D8CB) calc(6px + (100% - 12px)*2/3) 2px/1px 5px no-repeat,linear-gradient(#D5D8CB,#D5D8CB) calc(100% - 6px) 2px/1px 5px no-repeat,
+ repeating-linear-gradient(90deg,rgba(213,216,203,.32) 0 1px,transparent 1px calc((100% - 12px)/12)) 6px 4px/calc(100% - 11px) 3px no-repeat;opacity:1}
+input.fader::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:#090A09;box-shadow:inset 0 1px 2px #000,0 1px 0 rgba(255,255,255,.09)}
+input.fader::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:20px;margin-top:-8px;border-radius:2px;border:1px solid #0A0B0A;background:linear-gradient(90deg,transparent 4px,#2A2C28 4px 5px,transparent 5px),linear-gradient(180deg,#D8DBCF 0,#A9AC9F 48%,#8A8D82 52%,#B9BCAF 100%);box-shadow:0 2px 3px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.55)}
+input.fader::-moz-range-track{height:4px;border-radius:2px;background:#090A09;box-shadow:inset 0 1px 2px #000}
+input.fader::-moz-range-thumb{width:9px;height:18px;border-radius:2px;border:1px solid #0A0B0A;background:linear-gradient(90deg,transparent 4px,#2A2C28 4px 5px,transparent 5px),linear-gradient(180deg,#D8DBCF 0,#A9AC9F 48%,#8A8D82 52%,#B9BCAF 100%);box-shadow:0 2px 3px rgba(0,0,0,.65)}
+input.fader:focus-visible{outline:2px solid #FFB23E;outline-offset:3px}
