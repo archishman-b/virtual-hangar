@@ -148,16 +148,16 @@ body.full #stage{position:relative;width:100%;height:100dvh;border:0}
 .xl.dot.t3 i{opacity:.8;width:8px;height:8px;left:-4px;top:-4px}
 .xl.dot i:hover{opacity:1;box-shadow:0 0 0 4px rgba(124,255,158,.45)}
 .xl.dot i:hover+span{display:block}
-#xSys{position:absolute;left:14px;bottom:46px;z-index:3;display:flex;flex-direction:column;gap:3px}
+#xSys{position:absolute;right:14px;top:64px;z-index:3;display:flex;flex-direction:column;gap:3px}
 #xSys[hidden]{display:none}
-#xSys::before{content:"Labels";font:600 10px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#7CFF9E;opacity:.7;margin-bottom:3px}
+#xSys::before{content:"Label systems";font:600 10px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#7CFF9E;opacity:.7;margin-bottom:3px}
 #xSys button{font:500 11px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;text-align:left;color:#7CFF9E;background:rgba(4,16,10,.55);border:1px solid rgba(124,255,158,.3);padding:7px 10px;min-height:28px;cursor:pointer}
 #xSys button:hover{border-color:#7CFF9E}
 #xSys button[aria-pressed=true]{background:rgba(124,255,158,.2);border-color:#7CFF9E;color:#E4FFEC}
 .xsl{display:flex;align-items:center;gap:8px;padding:0 10px;background:#1B1D1A;border:2px solid #0E0F0D;border-radius:4px;box-shadow:inset 0 1px 0 #4A4F47;color:#D5D8CB;font:inherit;letter-spacing:.08em;text-transform:uppercase;min-height:44px}
 .xsl input{width:150px;accent-color:#FFB23E}
 @media (max-width:699px),(max-height:520px) and (orientation:landscape){.xl span{font-size:9px;padding:1px 4px}.xl.t1 span{font-size:10px}.xl.t3 span{font-size:8.5px}
-#xSys{flex-direction:row;flex-wrap:wrap;left:8px;right:8px;bottom:162px;gap:3px}#xSys::before{display:none}#xSys button{padding:6px 7px;font-size:10px}
+#xSys{flex-direction:row;flex-wrap:wrap;left:8px;right:8px;top:auto;bottom:162px;gap:3px}#sysToggle{display:none}#xSys::before{display:none}#xSys button{padding:6px 7px;font-size:10px}
 #xTools{flex-wrap:wrap;justify-content:flex-end;left:8px;right:8px}.xsl{flex:1 1 100%}.xsl input{flex:1;width:auto}}
 .xrow{grid-column:span 2;align-self:center}
 
@@ -178,3 +178,5 @@ input.fader::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:20px
 input.fader::-moz-range-track{height:4px;border-radius:2px;background:#090A09;box-shadow:inset 0 1px 2px #000}
 input.fader::-moz-range-thumb{width:9px;height:18px;border-radius:2px;border:1px solid #0A0B0A;background:linear-gradient(90deg,transparent 4px,#2A2C28 4px 5px,transparent 5px),linear-gradient(180deg,#D8DBCF 0,#A9AC9F 48%,#8A8D82 52%,#B9BCAF 100%);box-shadow:0 2px 3px rgba(0,0,0,.65)}
 input.fader:focus-visible{outline:2px solid #FFB23E;outline-offset:3px}
+
+#sysToggle[hidden]{display:none}
