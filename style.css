@@ -135,10 +135,30 @@ body.full #stage{position:relative;width:100%;height:100dvh;border:0}
 #xlabels{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 #xlabels[hidden]{display:none}
 .xl{position:absolute;left:0;top:0;width:0;height:0}
-.xl::before{content:"";position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#7CFF9E}
-.xl::after{content:"";position:absolute;left:0;top:calc(-2px - var(--h,24px));width:1px;height:var(--h,24px);background:rgba(124,255,158,.8)}
-.xl span{position:absolute;left:0;bottom:calc(var(--h,24px) + 2px);transform:translateX(calc(-50% + var(--dx,0px)));white-space:nowrap;padding:2px 6px;background:rgba(4,16,10,.55);border:1px solid rgba(124,255,158,.5);color:#7CFF9E;font:500 12px/1.3 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:0;text-transform:uppercase}
-@media (max-width:699px),(max-height:520px) and (orientation:landscape){.xl span{font-size:10px;padding:1px 4px}}
+.xl i{box-sizing:border-box;position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#7CFF9E}
+.xl::after{content:"";position:absolute;left:0;top:calc(-2px - var(--h,24px));width:1px;height:var(--h,24px);background:rgba(124,255,158,.75)}
+.xl span{position:absolute;left:0;bottom:calc(var(--h,24px) + 2px);transform:translateX(calc(-50% + var(--dx,0px)));white-space:nowrap;padding:2px 6px;background:rgba(4,16,10,.6);border:1px solid rgba(124,255,158,.5);color:#7CFF9E;font:500 10px/1.3 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:0;text-transform:uppercase}
+.xl.t1 span{font-size:11px;font-weight:600;background:rgba(18,60,34,.82);border-color:#7CFF9E;color:#D9FFE4}
+.xl.t3 span{font-size:9px;padding:1px 3px;border-color:transparent;background:rgba(4,16,10,.45);color:#A6F5BC}
+.xl.t3::after{background:rgba(124,255,158,.4)}
+.xl.t3 i{width:4px;height:4px;left:-2px;top:-2px}
+.xl.dot::after{display:none}
+.xl.dot span{display:none;z-index:5;font-size:10px;padding:2px 6px;background:rgba(4,16,10,.92);border-color:#7CFF9E}
+.xl.dot i{pointer-events:auto;cursor:help;opacity:.95;width:10px;height:10px;left:-5px;top:-5px;border:2px solid rgba(4,16,10,.85);box-shadow:0 0 0 1px rgba(124,255,158,.55)}
+.xl.dot.t3 i{opacity:.8;width:8px;height:8px;left:-4px;top:-4px}
+.xl.dot i:hover{opacity:1;box-shadow:0 0 0 4px rgba(124,255,158,.45)}
+.xl.dot i:hover+span{display:block}
+#xSys{position:absolute;left:14px;bottom:46px;z-index:3;display:flex;flex-direction:column;gap:3px}
+#xSys[hidden]{display:none}
+#xSys::before{content:"Labels";font:600 10px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:#7CFF9E;opacity:.7;margin-bottom:3px}
+#xSys button{font:500 11px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;text-align:left;color:#7CFF9E;background:rgba(4,16,10,.55);border:1px solid rgba(124,255,158,.3);padding:7px 10px;min-height:28px;cursor:pointer}
+#xSys button:hover{border-color:#7CFF9E}
+#xSys button[aria-pressed=true]{background:rgba(124,255,158,.2);border-color:#7CFF9E;color:#E4FFEC}
+.xsl{display:flex;align-items:center;gap:8px;padding:0 10px;background:#1B1D1A;border:2px solid #0E0F0D;border-radius:4px;box-shadow:inset 0 1px 0 #4A4F47;color:#D5D8CB;font:inherit;letter-spacing:.08em;text-transform:uppercase;min-height:44px}
+.xsl input{width:150px;accent-color:#FFB23E}
+@media (max-width:699px),(max-height:520px) and (orientation:landscape){.xl span{font-size:9px;padding:1px 4px}.xl.t1 span{font-size:10px}.xl.t3 span{font-size:8.5px}
+#xSys{flex-direction:row;flex-wrap:wrap;left:8px;right:8px;bottom:162px;gap:3px}#xSys::before{display:none}#xSys button{padding:6px 7px;font-size:10px}
+#xTools{flex-wrap:wrap;justify-content:flex-end;left:8px;right:8px}.xsl{flex:1 1 100%}.xsl input{flex:1;width:auto}}
 .xrow{grid-column:span 2;align-self:center}
 
 #xTools{position:absolute;right:14px;bottom:12px;z-index:3;display:flex;gap:8px}
@@ -146,3 +166,6 @@ body.full #stage{position:relative;width:100%;height:100dvh;border:0}
 #xTools .key{width:auto;padding:0 16px}
 body:not(.full) #xExit{display:none}
 @media (max-width:699px){#xTools{bottom:58px}#xlabels{clip-path:inset(50px 0 0 0)}}
+
+.xlv{display:flex;gap:2px}
+#xTools .xlv .key{padding:0 12px}
